@@ -56,7 +56,17 @@ export class PermissionsCardBase extends React.Component<Props> {
 
     return (
       <ShowMoreCard
-        header={i18n.gettext('Permissions')}
+        header={<p>
+          {i18n.gettext('Permissions')}
+          <a className="PermissionCard-learn-more" href="https://support.mozilla.org/kb/permission-request-messages-firefox-extensions">
+            {i18n.gettext('Learn more')}
+            <span> </span>
+            <img src='https://user-images.githubusercontent.com/142755/95220537-9170b800-07c4-11eb-896c-87cce673a57a.png'
+              height='21'
+              width='21' />
+          </a>
+        </p> 
+      }
         className="PermissionsCard"
         id="AddonDescription-permissions-card"
         maxHeight={300}
@@ -81,7 +91,7 @@ export class PermissionsCardBase extends React.Component<Props> {
             </ul>
           </>
         ) : null}
-        <Button
+       {/*<Button
           buttonType="neutral"
           className="PermissionCard-learn-more"
           href="https://support.mozilla.org/kb/permission-request-messages-firefox-extensions"
@@ -90,7 +100,7 @@ export class PermissionsCardBase extends React.Component<Props> {
           puffy
         >
           {i18n.gettext('Learn more about permissions')}
-        </Button>
+       </Button>*/}
       </ShowMoreCard>
     );
   }
